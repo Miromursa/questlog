@@ -71,8 +71,8 @@ export function TaskColumn({
   return (
     <div 
       className={cn(
-        "flex flex-col h-full rounded-2xl p-3 sm:p-4 min-w-[280px] sm:min-w-[300px] flex-1 transition-colors duration-200",
-        isOver ? "bg-primary/10 ring-2 ring-primary ring-inset" : "bg-secondary/30"
+        "flex flex-col h-full p-3 sm:p-4 min-w-[280px] sm:min-w-[300px] flex-1 transition-colors duration-200",
+        isOver ? "bg-primary/10" : ""
       )}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
@@ -81,8 +81,8 @@ export function TaskColumn({
       <div className="flex items-center justify-between mb-3 sm:mb-4 px-2">
         <div className="flex items-center gap-2">
           <h3 className="font-bold text-base sm:text-lg text-primary">{title}</h3>
-          <span className="text-[10px] sm:text-xs font-semibold bg-card px-1.5 sm:px-2 py-0.5 rounded-full shadow-sm text-muted-foreground border border-border">
-            {tasks.length}
+          <span className="text-[10px] sm:text-xs font-semibold bg-transparent px-1.5 sm:px-2 py-0.5 border border-border text-muted-foreground">
+            [{tasks.length}]
           </span>
         </div>
         <div className="flex gap-1">
@@ -104,8 +104,8 @@ export function TaskColumn({
         <div className="space-y-3 pb-4 min-h-full">
           {sortedTasks.length === 0 ? (
             <>
-              <div className="flex flex-col items-center justify-center py-12 text-muted-foreground border-2 border-dashed border-border rounded-xl">
-                <p className="text-sm">No tasks yet</p>
+              <div className="flex flex-col items-center justify-center py-12 text-muted-foreground border-2 border-dashed border-border">
+                <p className="text-sm font-mono">[ NO TASKS ]</p>
               </div>
               <Button 
                 variant="ghost" 

@@ -5,7 +5,6 @@ import { Task, TaskCategory, TaskPriority } from "@/types/task"
 import { TaskColumn } from "@/components/task-column"
 import { StreakCounter } from "@/components/streak-counter"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { 
   Plus, 
   RotateCcw, 
@@ -300,7 +299,7 @@ export default function QuestlogDashboard() {
   return (
     <div className="min-h-screen bg-background flex flex-col" onKeyDown={handleKeyDown}>
       {/* Header */}
-      <header className="sticky top-0 z-30 w-full bg-background/80 backdrop-blur-md border-b border-border px-6 py-4">
+      <header className="sticky top-0 z-30 w-full bg-background/80 backdrop-blur-md border-b-2 border-border px-6 py-4">
         <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <div>
@@ -308,13 +307,13 @@ export default function QuestlogDashboard() {
               <p className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">Adventure Tracker</p>
             </div>
             <div className="hidden md:flex items-center gap-3 ml-6 text-[10px] text-muted-foreground">
-              <span className="bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300 px-1.5 py-0.5 rounded font-medium">A</span>
+              <span className="border-2 border-red-500 text-red-500 px-1.5 py-0.5 font-bold">[A]</span>
               <span>Urgent</span>
-              <span className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 px-1.5 py-0.5 rounded font-medium">B</span>
+              <span className="border-2 border-amber-500 text-amber-500 px-1.5 py-0.5 font-bold">[B]</span>
               <span>Important</span>
-              <span className="bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 px-1.5 py-0.5 rounded font-medium">C</span>
+              <span className="border-2 border-blue-500 text-blue-500 px-1.5 py-0.5 font-bold">[C]</span>
               <span>Projects</span>
-              <span className="bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-300 px-1.5 py-0.5 rounded font-medium">D</span>
+              <span className="border-2 border-gray-500 text-gray-500 px-1.5 py-0.5 font-bold">[D]</span>
               <span>Ideas</span>
             </div>
           </div>
@@ -324,7 +323,7 @@ export default function QuestlogDashboard() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input 
                 placeholder="Find a task..." 
-                className="pl-10 bg-secondary/50 border-none focus-visible:ring-primary/20"
+                className="pl-10 bg-transparent border-2 border-border focus-visible:ring-primary/20"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -332,7 +331,6 @@ export default function QuestlogDashboard() {
           </div>
 
           <div className="flex items-center gap-3">
-            <ThemeToggle />
             <div className="hidden lg:flex items-center gap-4 mr-4 text-sm font-medium">
               <div className="flex items-center gap-1 text-primary">
                 <CheckCircle2 size={16} />
@@ -349,8 +347,8 @@ export default function QuestlogDashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 p-4 sm:p-6 md:p-8 overflow-x-auto" onClick={handleBackgroundClick}>
-        <div className="max-w-[1600px] mx-auto h-full min-h-[600px] flex gap-4 sm:gap-6 overflow-x-auto pb-4">
+      <main className="flex-1 p-4 sm:p-6 md:p-8" onClick={handleBackgroundClick}>
+        <div className="max-w-[1600px] mx-auto h-full min-h-[600px] flex flex-col lg:flex-row gap-4 sm:gap-6 pb-4">
           <TaskColumn 
             title="Today" 
             category="today"
@@ -426,7 +424,7 @@ export default function QuestlogDashboard() {
                 onTaskFocus={handleTaskFocus}
               />
              </div>
-             <Button variant="outline" onClick={resetDailies} className="w-full gap-2 border-dashed border-2 py-6 text-muted-foreground hover:text-primary hover:border-primary">
+             <Button variant="outline" onClick={resetDailies} className="w-full gap-2 border-dashed border-2 py-6 text-muted-foreground hover:bg-primary hover:text-background hover:border-primary">
                 <RotateCcw size={16} />
                 Reset Daily Routines
              </Button>
@@ -435,7 +433,7 @@ export default function QuestlogDashboard() {
       </main>
 
       {/* Footer Mobile Stats */}
-      <div className="lg:hidden border-t bg-background p-3 flex justify-around text-xs font-bold text-muted-foreground uppercase tracking-widest">
+      <div className="lg:hidden border-t-2 bg-background p-3 flex justify-around text-xs font-bold text-muted-foreground uppercase tracking-widest">
         <div className="flex flex-col items-center">
           <span className="text-primary text-lg">{stats.today}</span>
           <span>Today</span>

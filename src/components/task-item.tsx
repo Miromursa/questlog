@@ -32,10 +32,10 @@ interface TaskItemProps {
 }
 
 const priorityColors: Record<TaskPriority, string> = {
-  A: "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800",
-  B: "bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 hover:bg-orange-200 dark:hover:bg-orange-800",
-  C: "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800",
-  D: "bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800",
+  A: "border-red-500 text-red-500 hover:bg-red-500 hover:text-background",
+  B: "border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-background",
+  C: "border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-background",
+  D: "border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-background",
 }
 
 const priorityDescriptions: Record<TaskPriority, string> = {
@@ -177,10 +177,10 @@ export function TaskItem({
       onKeyDown={handleKeyDown}
       tabIndex={0}
       className={cn(
-        "group relative flex items-center gap-3 bg-card p-3 rounded-xl border border-border shadow-sm transition-all hover:shadow-md hover:border-primary/20 task-item",
+        "group relative flex items-center gap-3 bg-transparent p-3 border border-border task-item",
         task.completed && "opacity-60 grayscale-[0.5]",
-        isSelected && "ring-2 ring-primary ring-inset bg-primary/5 border-primary/30",
-        isFocused && "ring-2 ring-primary ring-inset bg-primary/5 border-primary/30"
+        isSelected && "border-primary bg-primary/10",
+        isFocused && "border-primary bg-primary/10"
       )}
     >
       <div className="flex items-center cursor-grab active:cursor-grabbing text-muted-foreground group-hover:text-primary transition-colors"
@@ -206,7 +206,7 @@ export function TaskItem({
           onSelect?.(task.id, multiSelect, rangeSelect)
           onFocus?.(task.id)
         }}
-        className="h-5 w-5 rounded-full border-primary"
+        className="h-5 w-5 border-2 border-primary"
       />
       
       <div className="flex-1 min-w-0">
@@ -241,11 +241,11 @@ export function TaskItem({
           variant="outline" 
           title={priorityDescriptions[task.priority]}
           className={cn(
-            "text-[10px] uppercase font-bold px-1.5 py-0 cursor-pointer transition-colors", 
+            "text-[10px] uppercase font-bold px-1.5 py-0 cursor-pointer transition-colors border-2", 
             priorityColors[task.priority]
           )}
         >
-          {task.priority}
+          [{task.priority}]
         </Badge>
         
         <DropdownMenu>

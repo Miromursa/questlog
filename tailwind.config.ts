@@ -53,7 +53,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        body: ["Inter", "sans-serif"],
+        body: ["Fira Code", "Cascadia Code", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "monospace"],
       },
       keyframes: {
         "accordion-down": {

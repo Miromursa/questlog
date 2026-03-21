@@ -4,30 +4,29 @@
 
 @layer base {
   :root {
-    --font-body: 'Inter', system-ui, sans-serif;
-    --font-handwritten: 'Caveat', cursive; /* Use this for your scribbled logo/headers */
+    --font-body: 'Fira Code', 'Cascadia Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
     
-    /* Light Mode: Parchment & Ink */
-    --background: 40 33% 96%;
-    --foreground: 20 14% 15%; /* Charcoal ink */
-    --card: 40 33% 98%;
-    --card-foreground: 20 14% 15%;
-    --popover: 40 33% 98%;
-    --popover-foreground: 20 14% 15%;
-    --primary: 15 40% 45%; /* Subtle terracotta/leather */
-    --primary-foreground: 40 33% 96%;
-    --secondary: 35 20% 88%;
-    --secondary-foreground: 20 14% 25%;
-    --muted: 35 20% 88%;
-    --muted-foreground: 25 15% 45%; /* Faded pencil */
-    --accent: 50 80% 85%; /* Subtle highlighter yellow */
-    --accent-foreground: 20 14% 15%;
-    --destructive: 0 60% 50%;
-    --destructive-foreground: 40 33% 96%;
-    --border: 35 20% 85%; /* Soft pencil lines */
-    --input: 35 20% 85%;
-    --ring: 15 40% 45%;
-    --radius: 0.25rem; /* Sharper, paper-like corners */
+    /* Pip-Boy Terminal Theme */
+    --background: 0 0% 8%; /* Dark grey */
+    --foreground: 38 85% 60%; /* Slightly brighter amber */
+    --card: 0 0% 10%;
+    --card-foreground: 38 85% 60%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 38 85% 60%;
+    --primary: 38 90% 55%; /* Brighter amber */
+    --primary-foreground: 0 0% 8%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 38 85% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 38 65% 40%; /* Slightly brighter dimmed amber */
+    --accent: 38 95% 65%; /* Brighter accent */
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 75% 60%; /* Slightly brighter red */
+    --destructive-foreground: 0 0% 8%;
+    --border: 0 0% 20%; /* Subtle grey borders */
+    --input: 0 0% 12%;
+    --ring: 38 90% 55%;
+    --radius: 0rem; /* Sharp corners */
     
     /* Faded ink colors for charts/tags */
     --chart-1: 15 40% 45%;
@@ -37,31 +36,6 @@
     --chart-5: 0 30% 55%;
   }
 
-  .dark {
-    /* Dark Mode: Deep Graphite / Slate */
-    --background: 220 10% 10%; 
-    --foreground: 0 0% 90%; 
-    --card: 220 10% 14%;
-    --card-foreground: 0 0% 90%;
-    --popover: 220 10% 14%;
-    --popover-foreground: 0 0% 90%;
-    --primary: 15 40% 55%; /* Keeps the subtle terracotta accent */
-    --primary-foreground: 220 10% 10%;
-    --secondary: 220 10% 20%;
-    --secondary-foreground: 0 0% 90%;
-    --muted: 220 10% 20%;
-    --muted-foreground: 220 10% 60%; /* Faded grey pencil */
-    --accent: 215 25% 30%; 
-    --accent-foreground: 0 0% 90%;
-    --destructive: 0 50% 40%;
-    --destructive-foreground: 0 0% 90%;
-    --border: 220 10% 20%; 
-    --input: 220 10% 20%;
-    --ring: 15 40% 55%;
-  }
-}
-
-@layer base {
   * {
     border-color: hsl(var(--border));
   }
