@@ -36,7 +36,7 @@ export default function QuestlogDashboard() {
 
   const addTask = (category: TaskCategory, title = "New Task", description = "") => {
     const newTask: Task = {
-      id: crypto.randomUUID(),
+      id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       title,
       description,
       priority: 'B',
