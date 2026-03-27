@@ -240,7 +240,7 @@ export function TaskItem({
           <h4 
             onMouseDown={handleTitleMouseDown}
             className={cn(
-              "text-sm font-medium transition-all cursor-text break-words",
+              "text-sm font-medium transition-all cursor-text break-all whitespace-normal",
               task.completed && "line-through text-muted-foreground"
             )}
           >
@@ -248,7 +248,7 @@ export function TaskItem({
           </h4>
         )}
         {task.description && !isEditing && (
-          <p className="text-xs text-muted-foreground break-words">{task.description}</p>
+          <p className="text-xs text-muted-foreground break-all whitespace-normal">{task.description}</p>
         )}
       </div>
 
